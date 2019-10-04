@@ -15,7 +15,8 @@ declare -A infos=([osType]=1 [osName]=2 [osVersion]=3 [architecture]=4 [kernel]=
 				  [upTime]=7 [hostName]=8 [externalIp]=9 [internalIp]=10 [nameServers]=11);
 
 # Servers
-declare -A servers=([pi]='pi@192.168.0.100' [integration]='fouad@integration' [lisa]='ubuntu@lisa-prod');
+#declare -A servers=([pi]='pi@pi' [integration]='fouad@integration' [lisa]='ubuntu@lisa-prod');
+declare -A servers=([pi]='pi@192.168.0.100');
 
 function usage {
 	cat <<- FIN

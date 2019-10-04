@@ -33,6 +33,10 @@ conky.config = {
 	color2 						= "e8e8e8",
 	color3 						= "Tan1"
 }
+
+--${color1}Internal IP : ${color2}${execi 3600 ./server_info.sh -s pi internalIp}
+--${color1}External IP : ${color2}${execi 3600 ./server_info.sh -s pi externalIp}
+
 conky.text = [[
 ${color3}SERVER: PI CI ${hr 1}
 ${color1}OS TYPE : ${color2}${execi 3600 ./server_info.sh -s pi osVersion osType | tr "\n" " "}
@@ -42,8 +46,6 @@ ${color1}Uptime  : ${color2}${execi 3600 ./server_info.sh -s pi upTime}
 ${color1}Hostname: ${color2}${execi 3600 ./server_info.sh -s pi hostName}
 ${color1}Load Av.: ${color2}${execi 3600 ./server_info.sh -s pi loadAverage}
 ${color3}NETWORK ${hr 1}
-${color1}Internal IP : ${color2}${execi 3600 ./server_info.sh -s pi internalIp}
-${color1}External IP : ${color2}${execi 3600 ./server_info.sh -s pi externalIp}
 ${color1}Name Servers: ${color2}${execi 3600 ./server_info.sh -s pi nameServers}
 ${color3}LOGGED USERS ${hr 1}
 ${color2}${execi 3600 ./server_info.sh -s pi loggedInUsers}
