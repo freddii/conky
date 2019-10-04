@@ -1,0 +1,80 @@
+--[[
+###########################################################
+##Credits                	                 	 ##
+##                                                       ##
+##https://github.com/freddii/conky                       ##
+##https://github.com/davidhdz/conky-horizontal-minimalist##
+###########################################################
+]]
+
+conky.config = {
+	alignment = 'bottom_middle',
+
+	cpu_avg_samples = 1,
+	net_avg_samples = 1,
+	update_interval = 30,
+
+	times_in_seconds = true,
+
+	default_color = 'white',
+	default_outline_color = 'white',
+	default_shade_color = 'white',
+	color2 = 'gray50',
+
+	use_xft = true,
+	font = 'DejaVu Sans Mono:size=9',
+
+	draw_borders = false,
+	draw_shades = false,
+	draw_graph_borders = false,
+	draw_outline = false,
+
+	border_width = 0,
+
+	gap_x = 0,
+	gap_y = 35,
+
+	own_window = true,
+	own_window_type = 'normal',
+	own_window_transparent = true,
+	own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+	own_window_argb_visual = true,
+
+	use_spacer = 'left',
+	double_buffer = true,
+	no_buffers = true,
+
+	total_run_times = 0,
+	background = true,
+
+	lua_load = './draw_bg.lua',
+	lua_draw_hook_pre = 'draw_bg',
+	template1 = [[${if_existing /proc/net/route wlp5s0}${color2}dn ${color}${totaldown wlp5s0} ${color2}up ${color}${totalup wlp5s0} ${endif}]],
+	template2 = [[${color}${exec MAXVALUE=$(cat $(ls /sys/class/backlight/*/max_brightness)) && VALUE=$(cat $(ls /sys/class/backlight/*/brightness)) && echo $(( $VALUE * 100 / $MAXVALUE))}%]],
+	template3 = [[${exec sudo ufw status | grep active | cut -c 9-27}]],
+}
+
+--code i removed from text
+-- ${color2}cpu: ${color}${cpu cpu0}% ${color2}Frec: ${color}${freq_g} Ghz 
+-- ${color2}swap: ${color}$swapperc%
+--
+--for ufw
+--sudo nano /etc/sudoers.d/ufw 
+--freddii ALL=(root) NOPASSWD:/usr/sbin/ufw status
+
+conky.text = [[
+${color2}Bat: ${color}${battery_short BAT0} \
+${color2}Cap: ${color}${format_time $battery_time "\hh \mm"} \
+${color2}Br: ${template2} ${color2}Up: ${color}${format_time $uptime "\hh \mm"} \
+${color2}Tcpu:${color}${acpitemp}°C ${color2}Ram: ${color}$memperc% \
+${color2}Net: ${color}${exec nmcli networking connectivity} \
+${template1}\
+${color2}Wifi: ${color}${exec nmcli radio wifi} \
+${color2}Ufw: ${color}${exec echo $(if grep ENABLED=yes /etc/ufw/ufw.conf>/dev/null; then echo "enabled"; else echo "disabled"; fi)} \
+${color2}${execpi 3600 ./weather.sh} \
+${color red}${exec echo $([ $(date +"%H") -lt 7 ] && echo you should sleep..)}
+#${color2}Ufw: ${color}${template3} \
+#${color2}T: ${color}${exec round($(tail -1 /tmp/sensor.json | jshon -e temperature_C),2)}°C
+#rtl_433 -C si -R 52 -F json:/tmp/sensor.json
+]]
+

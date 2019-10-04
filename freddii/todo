@@ -1,0 +1,85 @@
+--[[
+#####################################
+##  Credits
+##
+##
+##  https://github.com/freddii/conky 
+#####################################
+]]
+
+
+conky.config = {
+
+-------------------------------------
+--  Generic Settings
+-------------------------------------
+background=true,
+update_interval=30,
+double_buffer=true,
+no_buffers=true,
+text_buffer_size = 512,
+
+draw_shades=false,
+draw_outline=false,
+draw_borders=false,
+
+use_xft = true,
+total_run_times = 0,
+
+
+-------------------------------------
+--  Window Specifications
+-------------------------------------
+gap_x=530,
+gap_y=80,
+
+minimum_width=260,
+maximum_width=260,
+minimum_height=50,
+--maximum_height=190,
+
+alignment = 'bottom_left',
+
+own_window=true,
+own_window_type="normal",
+own_window_transparent=false,
+own_window_hints="undecorated,below,sticky,skip_taskbar,skip_pager",
+own_window_class = 'Conky',
+own_window_argb_visual=true,
+own_window_argb_value=192,
+double_buffer = true,
+draw_shades = false,
+default_shade_color = '#000000',
+draw_borders = false,
+border_width = 0,
+
+-------------------------------------
+--  Text Settings
+-------------------------------------
+xftalpha=1,
+font="Liberation Mono:size=9",
+override_utf8_locale=true,
+draw_graph_borders = false,
+draw_outline = false,
+default_outline_color = '#828282',
+no_buffers = true,
+uppercase = false,
+cpu_avg_samples = 4,
+pad_percents = 2,
+-------------------------------------
+--  Color Scheme
+-------------------------------------
+color1="gray80",
+
+-------------------------------------
+}
+
+
+conky.text = [[
+#####################################
+##  TODO LIST
+#####################################
+\
+${font DejaVu Sans Mono:size=12}TODO LIST${font Liberation Mono:size=12:style=Bold}${color #009bf9} ${exec echo $(($(wc -l ~/Desktop/TODO.txt | cut -c1-2)+1))} ${font}$color${hr 2}
+${color1}${exec cat ~/Desktop/TODO.txt |nl -w2 -s': '}
+]]

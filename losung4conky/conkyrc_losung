@@ -1,0 +1,66 @@
+conky.config = {
+--------------------------------------------------------
+--     LOSUNGEN
+--
+--based on: https://github.com/scit2010/losung4conky
+--------------------------------------------------------
+
+	background = true,
+	update_interval = 3600,
+	double_buffer = true,
+	no_buffers = true,
+	imlib_cache_size = 10,
+	text_buffer_size = 1024,
+
+	draw_shades = false,
+	draw_outline = false,
+	draw_borders = false,
+
+--to use another font
+	use_xft = true,
+	total_run_times = 0,
+
+	gap_x = 8,
+	gap_y = 8,
+
+	minimum_height = 200,
+	minimum_width = 200,
+
+	alignment = 'top_right',
+
+	own_window = true,
+	own_window_type = 'normal',
+	own_window_transparent = false,
+	own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+	own_window_class = 'Conky',
+	own_window_argb_visual = true,
+	own_window_argb_value = 192,
+	double_buffer = true,
+	draw_shades = false,
+	default_shade_color = '#000000',
+	draw_borders = false,
+	border_width = 0,
+
+	xftalpha = 1,
+	font = 'Liberation Mono:size 10',
+	override_utf8_locale = true,
+	draw_graph_borders = false,
+	draw_outline = false,
+	default_outline_color = '#828282',
+	no_buffers = true,
+	uppercase = false,
+	cpu_avg_samples = 4,
+	pad_percents = 2,
+
+	color1 = '#ffffff',
+	color2 = 'light gray',
+	--color2 gray80
+
+}
+
+conky.text = [[
+${color1}${font DejaVu Sans Mono:size=12}LOSUNGEN ${hr 2}
+${color2}${font}${execi 3600 ./losung.pl}
+${color2}${font Liberation Mono:size=8}(C) Evangelische Brueder-Unität - Herrnhuter Brüdergemeine: www.herrnhuter.de
+Weitere Informationen finden Sie hier: www.losungen.de
+]];

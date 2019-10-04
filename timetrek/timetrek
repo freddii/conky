@@ -1,0 +1,110 @@
+background no
+update_interval 1
+
+own_window_class systemConky
+own_window yes
+#all options for own_window_type are normal, desktop, dock, panel or override
+own_window_type dock
+own_window_argb_visual yes
+own_window_argb_value 230
+own_window_transparent no
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+
+use_xft yes
+xft_alpha 1
+override_utf8_locale yes
+total_run_times 0
+
+double_buffer yes
+no_buffers yes
+draw_shades no
+draw_outline no
+draw_borders no
+draw_graph_borders no
+
+top_name_width 9
+uppercase no
+
+# number of cpu/net samples to average
+# set to 1 to disable averaging
+cpu_avg_samples 2
+net_avg_samples 2
+use_spacer right
+
+default_color E0EBF1 #E6E6FA
+
+alignment top_middle
+gap_x 15
+gap_y 15
+minimum_size 410 247
+maximum_width 410
+
+border_outer_margin 2
+
+text_buffer_size 1024
+imlib_cache_size 0
+
+#Shades of Gray#
+color0 E6E6FA
+color1 DDDDDD
+color2 AAAAAA
+color3 888888
+#Orange#
+color4 996633
+#MY Light Green#
+color5 90EE90
+#MY Blue Light TEXT#
+color6 55ABFF
+#Light Orange#
+color7 FFA300
+#MY Blue Light BARS#
+color8 1E90FF
+#My Blue Graph#
+#001030 0057FF#
+#My Gray Graph#
+#474747 E9E9E9#
+#My Orange Graph#
+#562E00 FF8800#
+###End Color###
+
+lua_load ./time_bar.lua
+lua_draw_hook_post draw_boxes
+
+own_window_colour 2F343F
+
+TEXT
+#
+#TIME
+#
+#############################################
+${voffset -9}${color3}${hr}${color}
+${voffset -5}${voffset 0}${goto 230}${font DejaVu Sans Mono:bold:size=13}${color5}${time %H}${color} : ${color7}${time %M}${color} : ${color6}${time %S}${color}${font}
+${voffset 31}${font DejaVu Sans Mono:bold:size=13}${alignc}${time %A, %B %d, %Y}${font}
+#${voffset -10}${color3}${hr}${color}
+#
+#CPU
+#
+${voffset -8}${offset 4}${font DejaVu Sans Mono:bold:size=9}Cpu: ${color5}$cpu%${color} ${voffset -4}${goto 75}${cpugraph 562E00 FF8800}
+#
+#DRIVE and RAM
+#
+${voffset -8}${offset 4}${font DejaVu Sans Mono:bold:size=9}Root: ${color6}${fs_used_perc /}%${color} ${color7}  ${fs_used /}${color} / ${fs_size /}${color}   ${color5}${fs_bar 4 /}${color}
+${voffset 0}${offset 4}${font DejaVu Sans Mono:bold:size=9}Home: ${color6}${fs_used_perc /home}%${color} ${color7}  ${fs_used /home}${color} / ${fs_size /home}${color}   ${color5}${fs_bar 4 /home}${color}
+${voffset 0}${offset 4}${font DejaVu Sans Mono:bold:size=9}Ram: ${color6}$memperc%${color} ${color7}  $mem${color} / $memmax${color}   ${color5}${membar 4}${color}
+#
+#NETWORK
+#
+${voffset 0}${offset 4}${font DejaVu Sans Mono:bold:size=9}Down: ${color7}${downspeed wlp5s0}${color} ${alignr}${color1}Up: ${color} ${color7}${upspeed wlp5s0}${font}${color}
+${voffset -17}${color3}${stippled_hr}${color}
+${voffset -13}${downspeedgraph wlp5s0 25,200 474747 E9E9E9}${alignr}${upspeedgraph wlp5s0 25,200 E9E9E9 474747}
+${voffset -23}${color3}${stippled_hr}${color}
+${voffset 2}${offset 4}${font DejaVu Sans Mono:bold:size=9}${voffset -10}Received:   ${color7}${totaldown wlp5s0}${color} ${alignr}Sent:   ${color7}${totalup wlp5s0}${color}
+#
+#SYSTEM
+#
+${voffset 0}${offset 4}${font DejaVu Sans Mono:bold:size=9}Proccesing:  ${running_processes}/ ${color7}${processes}${color} $alignr TCP Connections:   ${color7}${tcp_portmon 1 65535 count}${color}
+${voffset 0}${offset 4}${font DejaVu Sans Mono:bold:size=9}$sysname:  ${color7}$kernel${color} $machine $alignr Uptime:  ${color7}$uptime${color}
+${voffset -5}${color3}${hr}${color}
+${voffset -120}
+
+##==================================== Regards, Etles_Team and trytip ============================================##

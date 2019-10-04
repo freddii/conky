@@ -1,0 +1,89 @@
+--[[
+######################################
+## Credits			    ##
+##				    ##
+##				    ##
+## https://github.com/freddii/conky ##
+######################################
+]]
+
+
+conky.config = {
+
+-------------------------------------
+--  Generic Settings
+-------------------------------------
+background=true,
+update_interval=3600,
+double_buffer=true,
+no_buffers=true,
+imlib_cache_size=4096,
+text_buffer_size = 1024,
+
+draw_shades=false,
+draw_outline=false,
+draw_borders=false,
+
+use_xft = true,
+total_run_times = 0,
+
+
+-------------------------------------
+--  Window Specifications
+-------------------------------------
+gap_x=170,
+gap_y=0,
+
+
+minimum_width=320,
+minimum_height=260,
+
+alignment = 'middle_middle',
+
+own_window=true,
+own_window_type="normal",
+own_window_transparent=false,
+own_window_hints="undecorated,below,sticky,skip_taskbar,skip_pager",
+
+double_buffer = true,
+draw_shades = false,
+default_shade_color = '#000000',
+draw_borders = true,
+border_width = 3,
+
+-------------------------------------
+--  Text Settings
+-------------------------------------
+xftalpha=1,
+font="font DejaVu Sans Mono:size=11",
+override_utf8_locale=true,
+draw_graph_borders = false,
+draw_outline = false,
+default_outline_color = '#828282',
+uppercase = false,
+pad_percents = 2,
+-------------------------------------
+--  Color Scheme
+-------------------------------------
+color1="gray50",
+-------------------------------------
+--template0 = 'URL',
+--template1 =[["URL"]],
+--${templatex}
+template1 =[["https://www.rbb24.de/include/webcam/rathaus/hugesize_logo.jpg"]],
+
+}
+
+-------------------------------------ex-f 3600 im -f 3600
+
+
+conky.text = [[
+${font}RED HOUSE${hr 2}
+${execi 3600 curl -o /tmp/cam2.jpg ${template1}}
+${image /tmp/cam2.jpg -p 0,20 -s 320x240}
+]]
+
+
+
+
+

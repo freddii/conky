@@ -1,0 +1,64 @@
+--[[
+#################################################################################################
+##     CLOCK            								       ##
+##					  						       ##
+## License : Distributed under the terms of GNU GPL version 2 or later                         ##
+##											       ##
+## based on:										       ##
+## https://github.com/ilnanny/Archmerge-Conky-Collection/blob/master/NP-Grey-Clock-LUA.conkyrc ##
+#################################################################################################
+]]
+
+conky.config = {
+
+	--Various settings
+	update_interval = 60,
+	background = true, 							-- forked to background
+	double_buffer = true,
+	no_buffers = true,
+	imlib_cache_size=4096,
+
+	--Placement
+	alignment = 'top_left',
+	gap_x = 250,
+	gap_y = 66,
+	minimum_height = 130,
+	minimum_width = 130,
+	maximum_width = 130,
+
+	--Graphical
+
+	border_inner_margin = 12, 					-- margin between border and text
+	border_outer_margin = 10, 					-- margin between border and edge of window	
+
+	--Textual
+
+	override_utf8_locale = true,
+	top_name_verbose = false,
+	use_spacer = 'none',
+	use_xft = true,
+	xftalpha = 1,
+
+	--Windows
+
+	own_window = true,
+	own_window_argb_value = 0,
+	own_window_argb_visual = true,
+	own_window_class = 'Conky',
+	own_window_colour = '#000000',
+	own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+	own_window_transparent = false,
+	own_window_title = 'system_conky',
+	own_window_type = 'normal',-- # options are: normal/override/dock/desktop/panel
+
+	--Lua
+	--lua_load = /home/xxuserxx/.conky/round_clock/imlib_clock.lua,
+	lua_load = 'imlib_clock.lua',
+
+};
+
+
+conky.text = [[
+${lua imlib_clock grey 130 80 80}
+]]
+
