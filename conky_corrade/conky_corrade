@@ -1,0 +1,41 @@
+conky.config = {
+	total_run_times 			= 0,
+	out_to_console  			= false,
+	double_buffer   			= true,
+	no_buffers 					= true,
+	text_buffer_size 			= 2048,
+	update_interval 			= 1,
+	cpu_avg_samples 			= 4,
+	net_avg_samples 			= 2,
+	alignment 					= "bottom_left",
+	maximum_width 				= 350,
+	gap_x 						= 230,
+	draw_shades 				= true,
+	draw_outline 				= false,
+	draw_borders 				= false,
+	border_width 				= 1,
+	border_outer_margin 		= 4,
+	own_window 					= true,
+	own_window_transparent 		= true,
+	own_window_hints 			= "undecorated,below,sticky,skip_taskbar,skip_pager",
+	own_window_argb_visual 		= true,
+	own_window_argb_value 		= 0,
+	use_xft 					= true,
+	xftalpha 					= .1,
+	override_utf8_locale 		= true,
+	font 						= "Monospace:size=9",
+	uppercase 					= false,
+	use_spacer 					= "left",
+	pad_percents 				= 2,
+	default_color 				= "FFFFFF",
+	default_outline_color 		= "black",
+	color1 						= "ad5bcb",
+	color2 						= "e8e8e8",
+	color3 						= "Tan1"
+}
+conky.text = [[
+${color3}BOT VERSION: ${hr 1}
+${color1}OS TYPE : ${color2}${execi 3000 ./version.sh}
+${color3}SIMULATOR STATS: ${hr 1}
+${color2}${execi 300 ./getregiondata.sh}
+]]

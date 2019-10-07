@@ -1,0 +1,9 @@
+#group permission land(getgriddata)
+
+GroupUUID="UUID"
+GroupPassword="grouppassword"
+BotFolderName="bot1"
+HttpServer="192.168.0.100:8080/"
+
+#test:
+#curl -d "command=version&group=$GroupUUID&password=$GroupPassword" $HttpServer
