@@ -34,7 +34,7 @@ conky.config = {
 	color3 						= "Tan1"
 }
 conky.text = [[
-${color3}BOT VERSION: ${hr 1}
+${color3}BOT: ${execi 300 ./getbotfolder.sh} ${hr 1}
 ${color1}OS TYPE : ${color2}${execi 3000 ./version.sh}
 ${color3}SIMULATOR STATS: ${hr 1}
 ${color2}${execi 300 ./getregiondata.sh}
