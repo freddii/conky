@@ -12,3 +12,6 @@ ssh-copy-id pi@192.168.0.xx
 ```
 $ conky -d -q -c your_conky_config
 ```
+
+based on:
+https://github.com/fouad-j/monitoring-server-conky
