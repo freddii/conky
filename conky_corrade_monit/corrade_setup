@@ -1,9 +1,7 @@
-#group permission land(getgriddata),execute(monit)
-
-GroupUUID="UUID"
+GroupUUID="UUID" 			#group permission execute(monit)
 GroupPassword="grouppassword"
 BotFolderName="bot1"
-HttpServer="192.168.0.100:8080/"
+HttpServer="192.168.0.100:8080/"	#localip=$(hostname -I | awk '{print $1}')
+HomeWifiSSID="SSID"
 
-#test:
-#curl -d "command=version&group=$GroupUUID&password=$GroupPassword" $HttpServer
+#to test HttpServer:  curl -d "command=version&group=$GroupUUID&password=$GroupPassword" $HttpServer

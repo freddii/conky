@@ -7,9 +7,9 @@ conky.config = {
 	update_interval 			= 1,
 	cpu_avg_samples 			= 4,
 	net_avg_samples 			= 2,
-	alignment 					= "bottom_left",
+	alignment 					= "top_left",
 	maximum_width 				= 350,
-	gap_x 						= 500,
+	gap_x 						= 1210,
 	draw_shades 				= true,
 	draw_outline 				= false,
 	draw_borders 				= false,
@@ -34,10 +34,6 @@ conky.config = {
 	color3 						= "Tan1"
 }
 conky.text = [[
-${color3}BOT: ${execi 300 ./getbotfolder.sh} ${hr 1}
-${color1}OS TYPE : ${color2}${execi 3000 ./version.sh}
-${color3}SIMULATOR STATS: ${hr 1}
-${color2}${execi 300 ./getregiondata.sh}
-${color3}BOT STATS ${hr 1}
+${color3}MONIT STATS ${hr 1}
 ${color2}${execi 400 ./monitstatus.sh}
 ]]
