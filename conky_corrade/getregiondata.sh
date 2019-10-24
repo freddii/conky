@@ -11,4 +11,8 @@ arrv_v2=$(echo ${arr[5]} | sed -e 's/%20/ /g' | sed -e $'s/%0A/\\\n/g' | sed -e 
 echo "$arrv_v2"
 }
 
+if [ "$(iwgetid -r)" == "$HomeWifiSSID" ]; then 
 rawdatadecode
+else
+echo "$(iwgetid -r)"" is not home wifi."
+fi
