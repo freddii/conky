@@ -6,7 +6,7 @@ A small script and config to monitor remotely your servers using conky
 ssh-keygen -t rsa -b 2048
 ssh-copy-id pi@192.168.0.xx
 ```
-* You need to change servers array in server_info.sh file lines 18 and 38
+* You need to change servers array in server_info.sh file lines 13 20 and 40
 * Customize your conky config based on one of mine (conky_*)
 * Execute it with
 ```
