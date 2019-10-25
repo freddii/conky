@@ -10,7 +10,7 @@
 
 set -u
 
-HomeWifiSSID="SSID"
+HomeWifiSSID="SSID" #echo $(/usr/sbin/iwgetid -r)
 # Command and his appearance line
 declare -A infos=([osType]=1 [osName]=2 [osVersion]=3 [architecture]=4 [kernel]=5 [loadAverage]=6 \
 				  [upTime]=7 [hostName]=8 [externalIp]=9 [internalIp]=10 [nameServers]=11);
@@ -95,10 +95,10 @@ LastUpdate=$(( `date +%s` - `stat -L --format %Y $fileNamex` ));
 echo "$LastUpdate" " sec"
 }
 
-if [ "$(iwgetid -r)" == "$HomeWifiSSID" ]; then 
+if [ "$(/usr/sbin/iwgetid -r)" == "$HomeWifiSSID" ]; then 
 fetchInfoServer $server
 else
-echo "$(iwgetid -r)"" is not home wifi."
+echo "$(/usr/sbin/iwgetid -r)"" is not home wifi."
 fi
 
 for i in $@; do
