@@ -6,3 +6,7 @@ https://github.com/scit2010/losung4conky
 # Setup
 This files are meant to be used with conky manager  
 https://github.com/zcot/conky-manager2  
+
+you get the latest losungen20xx.csv file from  
+https://www.losungen.de/download/
+  
