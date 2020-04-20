@@ -31,7 +31,7 @@ total_run_times = 0,
 -------------------------------------
 --  Window Specifications
 -------------------------------------
-gap_x=8,
+gap_x=330,
 gap_y=80,
 
 minimum_height=200,
