@@ -10,8 +10,8 @@ arr=(${QUERY_STRING//[=&]/ })
 echo ${arr[5]} | sed -e 's/%20/ /g' | sed -e $'s/%0A/\\\n/g' | sed -e 's/%25/%/g' | sed -e 's/%5B/[/g' | sed -e 's/%5D/]/g' | sed -e 's/%3A/:/g' | sed -e 's|%2F|/|g' | sed -e "s|%27|'|g" | sed -e 's|%2C|,|g' | sed -e 's/data collected               .*, /data collected               /g'
 }
 
-if [ "$(/usr/sbin/iwgetid -r)" == "$HomeWifiSSID" ]; then 
+if [ "$(iwgetid -r)" == "$HomeWifiSSID" ]; then 
 rawdatadecode
 else
-echo "$(/usr/sbin/iwgetid -r)"" is not home wifi."
+echo "$(iwgetid -r)"" is not home wifi."
 fi
