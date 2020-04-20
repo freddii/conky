@@ -10,8 +10,8 @@ arr=(${QUERY_STRING//[=&]/ })
 echo "corrade v"${arr[5]}
 }
 
-if [ "$(/usr/sbin/iwgetid -r)" == "$HomeWifiSSID" ]; then 
+if [ "$(iwgetid -r)" == "$HomeWifiSSID" ]; then 
 rawdatadecode
 else
-echo "$(/usr/sbin/iwgetid -r)"" is not home wifi."
+echo "$(iwgetid -r)"" is not home wifi."
 fi
