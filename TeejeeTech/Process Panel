@@ -1,0 +1,77 @@
+#####################################
+## Credits			    ##
+##				    ##
+##				    ##
+## https://github.com/freddii/conky ##
+######################################
+
+# -- Conky settings -- #
+background yes
+update_interval 3
+ 
+cpu_avg_samples 3
+ 
+override_utf8_locale yes
+ 
+double_buffer yes
+no_buffers yes
+ 
+text_buffer_size 2048
+imlib_cache_size 0
+ 
+# -- Window specifications -- #
+ 
+own_window_class Conky
+own_window yes
+#all options for own_window_type are normal, desktop, dock, panel or override
+own_window_type normal
+own_window_argb_visual yes
+own_window_argb_value 192
+own_window_transparent no
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+ 
+border_inner_margin 0
+border_outer_margin 0
+ 
+minimum_size 210 150
+maximum_width 210
+ 
+alignment middle_right
+gap_x 8
+gap_y 8
+ 
+# -- Graphics settings -- #
+draw_shades no
+draw_outline no
+draw_borders no
+draw_graph_borders no
+ 
+# -- Text settings -- #
+use_xft yes
+xftfont Liberation Mono:size=10
+xftalpha 0.8
+ 
+uppercase no
+ 
+default_color FFFFFF
+
+# own_window_colour 2F343F
+own_window_colour 000000
+
+TEXT
+${color2}CPU ${color0}${alignr}${cpu cpu0}%
+${cpubar cpu0 5,}
+${top name 1} $alignr ${top cpu 1}%
+${top name 2} $alignr ${top cpu 2}%
+${top name 3} $alignr ${top cpu 3}%
+${top name 4} $alignr ${top cpu 4}%
+${top name 5} $alignr ${top cpu 5}%
+
+${color2}RAM ${color0}${alignr}${mem}
+${membar 5,}
+${top_mem name 1} $alignr ${top_mem mem_res 1}
+${top_mem name 2} $alignr ${top_mem mem_res 2}
+${top_mem name 3} $alignr ${top_mem mem_res 3}
+${top_mem name 4} $alignr ${top_mem mem_res 4}
+${top_mem name 5} $alignr ${top_mem mem_res 5}
+
