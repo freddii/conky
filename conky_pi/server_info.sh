@@ -14,7 +14,7 @@ HomeWifiSSID="SSID" #echo $(/usr/sbin/iwgetid -r)
 
 # Servers
 #declare -A servers=([pi]='pi@pi' [integration]='fouad@integration' [lisa]='ubuntu@lisa-prod');
-declare -A servers=([pi]='pi@raspberrypi.fritz.box');
+declare -A servers=([pi]='pi@raspberrypi.fritz.box'); 
 
 # Command and his appearance line
 declare -A infos=([osType]=1 [osName]=2 [osVersion]=3 [architecture]=4 [kernel]=5 [loadAverage]=6 \
