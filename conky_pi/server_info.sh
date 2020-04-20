@@ -96,10 +96,10 @@ LastUpdate=$(( `date +%s` - `stat -L --format %Y $fileNamex` ));
 echo "$LastUpdate" " sec"
 }
 
-if [ "$(/usr/sbin/iwgetid -r)" == "$HomeWifiSSID" ]; then 
+if [ "$(iwgetid -r)" == "$HomeWifiSSID" ]; then 
 fetchInfoServer $server
 else
-echo "$(/usr/sbin/iwgetid -r)"" is not home wifi."
+echo "$(iwgetid -r)"" is not home wifi."
 fi
 
 for i in $@; do
