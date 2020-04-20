@@ -1,0 +1,88 @@
+--[[
+######################################
+## Credits			    ##
+##				    ##
+##				    ##
+## https://github.com/freddii/conky ##
+######################################
+]]
+
+
+conky.config = {
+
+-------------------------------------
+--  Generic Settings
+-------------------------------------
+background=true,
+update_interval=1,
+double_buffer=true,
+no_buffers=true,
+imlib_cache_size=10,
+text_buffer_size = 1024,
+
+draw_shades=false,
+draw_outline=false,
+draw_borders=false,
+
+use_xft = true,
+total_run_times = 0,
+
+
+-------------------------------------
+--  Window Specifications
+-------------------------------------
+gap_x=8,
+gap_y=0,
+
+minimum_height=200,
+minimum_width=200,
+
+alignment = 'top_right',
+
+own_window=true,
+own_window_type="normal",
+own_window_transparent=false,
+own_window_hints="undecorated,below,sticky,skip_taskbar,skip_pager",
+own_window_class = 'Conky',
+own_window_argb_visual=true,
+own_window_argb_value=192,
+double_buffer = true,
+draw_shades = false,
+default_shade_color = '#000000',
+draw_borders = false,
+border_width = 0,
+
+-------------------------------------
+--  Text Settings
+-------------------------------------
+xftalpha=1,
+font="DejaVu Sans Mono:size=11",
+override_utf8_locale=true,
+draw_graph_borders = false,
+draw_outline = false,
+default_outline_color = '#828282',
+no_buffers = true,
+uppercase = false,
+cpu_avg_samples = 4,
+pad_percents = 2,
+-------------------------------------
+--  Color Scheme
+-------------------------------------
+color1="gray50",
+}
+
+
+
+
+conky.text = [[
+${color1}${font Oswald:size=10:bold}NETWORK ${color2} ${hr 2}
+${if_up wlp5s0}
+${color3}${font Open Sans:size=9}Down: ${downspeed wlp5s0}/s ${alignr}Up: ${upspeed wlp5s0} /s
+${color1}${color1}${downspeedgraph wlp5s0 20,90 444444 eeeeee} ${alignr}${color1}${upspeedgraph wlp5s0 20,90 444444 eeeeee}
+${color3}  Total: ${totaldown wlp5s0} ${alignr}Total: ${totalup wlp5s0}
+${else}${if_up enp0s20u1}
+${color3}${font Open Sans:size=9}Down: ${downspeed wlp5s0}/s ${alignr}Up: ${upspeed wlp5s0} /s
+${color1}${color1}${downspeedgraph wlp5s0 20,90 444444 eeeeee} ${alignr}${color1}${upspeedgraph wlp5s0 20,90 444444 eeeeee}
+${color3}  Total: ${totaldown wlp5s0} ${alignr}Total: ${totalup wlp5s0}
+${endif}
+]]
