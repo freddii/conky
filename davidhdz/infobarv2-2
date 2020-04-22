@@ -69,6 +69,7 @@ ${color2}Br: ${template2} ${color2}Up: ${color}${format_time $uptime "\hh \mm"} 
 ${color2}Tcpu:${color}${acpitemp}°C ${color2}Ram: ${color}$memperc% \
 ${color2}Net: ${color}${exec nmcli networking connectivity} \
 ${template1}\
+${color2}Disk:${color}${fs_used /} /${fs_size /} \
 ${color2}Wifi: ${color}${exec nmcli radio wifi} \
 ${color2}Ufw: ${color}${exec echo $(if grep ENABLED=yes /etc/ufw/ufw.conf>/dev/null; then echo "enabled"; else echo "disabled"; fi)} \
 ${color red}${exec echo $([ $(date +"%H") -lt 7 ] && echo you should sleep..)}
