@@ -70,7 +70,7 @@ color1="gray50",
 --template0 = 'URL',
 --template1 =[["URL"]],
 --${templatex}
-template1 =[["https://www.rbb24.de/include/webcam/fsz/hugesize_logo.jpg"]],
+template1 =[["http://spbcamkoe1.ddns.net/record/current.jpg"]],
 
 }
 
@@ -78,9 +78,9 @@ template1 =[["https://www.rbb24.de/include/webcam/fsz/hugesize_logo.jpg"]],
 
 
 conky.text = [[
-${font}TV TOWER 2${hr 2}
-${execi 3600 curl -o /tmp/cam4.jpg ${template1}}
-${image /tmp/cam4.jpg -p 0,20 -s 320x240}
+${font}Königsplatz${hr 2}
+${execi 3600 curl -o /tmp/cam3.jpg ${template1}}
+${image /tmp/cam3.jpg -p 0,20 -s 320x240}
 ]]
 
 

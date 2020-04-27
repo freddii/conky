@@ -70,7 +70,7 @@ color1="gray50",
 --template0 = 'URL',
 --template1 =[["URL"]],
 --${templatex}
-template1 =[["https://www.rbb24.de/include/webcam/rathaus/hugesize_logo.jpg"]],
+template1 =[["https://paderborn2.it-wms.com/panorama1_raw.jpg"]],
 
 }
 
@@ -78,7 +78,7 @@ template1 =[["https://www.rbb24.de/include/webcam/rathaus/hugesize_logo.jpg"]],
 
 
 conky.text = [[
-${font}RED HOUSE${hr 2}
+${font}Rathausplatz${hr 2}
 ${execi 3600 curl -o /tmp/cam2.jpg ${template1}}
 ${image /tmp/cam2.jpg -p 0,20 -s 320x240}
 ]]

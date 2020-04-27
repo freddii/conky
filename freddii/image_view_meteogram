@@ -70,7 +70,7 @@ color1="gray50",
 --template0 = 'URL',
 --template1 =[["URL"]],
 --${templatex}
-template1 =[["https://www.yr.no/place/Germany/Berlin/Berlin/avansert_meteogram.png"]],
+template1 =[["https://www.yr.no/place/Germany/North_Rhine-Westphalia/Paderborn/avansert_meteogram.png"]],
 
 }
 

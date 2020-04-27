@@ -78,8 +78,8 @@ color1="gray50",
 
 
 conky.text = [[
-${font}BERLIN TV TOWER${hr 2}
-${execi 3600 curl -o /tmp/cam1.jpg https://tv-turm.de/fileadmin/webcam/images.jpg}
+${font}Pader Quellgebiet${hr 2}
+${execi 3600 curl -o /tmp/cam1.jpg https://paderborn.it-wms.com/panorama1_raw.jpg}
 ${image /tmp/cam1.jpg -p 0,20 -s 320x240}
 ]]
 
