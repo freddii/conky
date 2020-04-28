@@ -106,7 +106,7 @@ ${color0}PrtSc$alignr${color1} Screenshot
 ##  TODO LIST
 #####################################
 \
-${if_existing /home/freddii/Desktop/TODO.txt} ${color0}${font DejaVu Sans Mono:size=12}TODO LIST${font Liberation Mono:size=12:style=Bold}${color #B3FF3E} ${exec echo $(($(wc -l ~/Desktop/TODO.txt | cut -d' ' -f1)+1))} ${font}$color${hr 2}
+${if_existing /home/barney/Desktop/TODO.txt} ${color0}${font DejaVu Sans Mono:size=12}TODO LIST${font Liberation Mono:size=12:style=Bold}${color #009bf9} ${exec echo $(($(wc -l ~/Desktop/TODO.txt | cut -d' ' -f1)+1))} ${font}$color${hr 2}
 ${font DejaVu Sans Mono:size=9}${color1}${exec cat ~/Desktop/TODO.txt |nl -w2 -s': '}$endif
 ]]
 

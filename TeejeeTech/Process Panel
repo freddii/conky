@@ -38,7 +38,7 @@ maximum_width 210
  
 alignment middle_right
 gap_x 8
-gap_y 8
+gap_y -60
  
 # -- Graphics settings -- #
 draw_shades no
