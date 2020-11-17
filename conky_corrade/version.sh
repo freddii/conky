@@ -17,8 +17,8 @@ arr=(${QUERY_STRING//[=&]/ })
 echo "corrade v"$(urldecode ${arr[5]})  #sudo apt install renameutils
 }
 
-if [ "$(iwgetid -r)" == "$HomeWifiSSID" ]; then 
+if [ "$(/sbin/iwgetid -r)" == "$HomeWifiSSID" ]; then 
 rawdatadecode
 else
-echo "$(iwgetid -r)"" is not home wifi."
+echo "$(/sbin/iwgetid -r)"" is not home wifi."
 fi
