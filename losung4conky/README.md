@@ -1,12 +1,10 @@
-#  LOSUNGEN
-based on: 
-```
-https://github.com/scit2010/losung4conky
-``` 
-# Setup
-This files are meant to be used with conky manager  
-https://github.com/zcot/conky-manager2  
+*Losungen for Conky* shows the German daily watchwords from the Moravian church (Herrnhuter Bruedergemeine) in a Conky window.
 
-you get the latest losungen20xx.csv file from  
-https://www.losungen.de/download/
-  
+# Requirements
+The program requires Linux, a Perl interpreter and the system monitor Conky.
+An internet connection is only required for installation and to update the watchwords.
+
+I successfully tested the program with Perl 5, Conky 1.7-1.10 and various Linux distributions and desktop environments.
+
+
+For more information see the files doc/README.md (in English) and doc/LIESMICH.md (in German).

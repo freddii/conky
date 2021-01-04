@@ -30,10 +30,10 @@ conky.config = {
 	minimum_width = 450, minimum_height = 0,-- w|h
 	maximum_width = 450,
 
-	gap_x = 10,-- l|r
-	gap_y = 670,-- u|d
+	gap_x = 20,-- l|r
+	gap_y = 60,-- u|d
 
-	alignment = 'top_left',
+	alignment = 'bottom_left',
 --###################################################  End Window Settings  ###
 --##  Font Settings  ##########################################################
 -- Use Xft (anti-aliased font and stuff)

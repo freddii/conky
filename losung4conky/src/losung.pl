@@ -7,7 +7,6 @@
 #               line length: maximum length of each output line
 # Requirements: needs Perl
 #               file 'losungen<Year>.csv' must be in current directory
-#		https://www.losungen.de/download/
 # License:
 #    Copyright (C) 2010 by Sven Claussner <>
 #
@@ -138,8 +137,8 @@ if (defined $errorMsg && ! $errorMsg eq ""){
   printw("Losung für $dayOfWeek, den $currentDate:\n",$textlength);
   printw("$watchwordText ($watchwordVerse)\n",$textlength);
   printw("$teachingText ($teachingVerse)\n",$textlength);
-#  printw("(C) Evangelische Brueder-Unität - Herrnhuter Brüdergemeine: www.herrnhuter.de\n",$textlength);
-#  printw("Weitere Informationen finden Sie hier: www.losungen.de", $textlength);
+  printw("(C) Evangelische Brueder-Unität - Herrnhuter Brüdergemeine: www.herrnhuter.de\n",$textlength);
+  printw("Weitere Informationen finden Sie hier: www.losungen.de", $textlength);
 }
 print "\n";
 
