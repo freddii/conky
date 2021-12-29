@@ -29,7 +29,7 @@ conky.config = {
 	alignment = 'top_right',
 
 	own_window = true,
-	own_window_type = 'normal',
+	own_window_type = 'desktop',-- # options are: normal/override/dock/desktop/panel
 	own_window_transparent = false,
 	own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
 	own_window_class = 'Conky',

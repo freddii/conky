@@ -85,7 +85,8 @@ $currentDate="$currentDay.$currentMonth.$currentYear";
 # open and read input file
 $_=$0;
 /(.*)\/[\w\.]+$/;
-my $workingdir = $1;
+# my $workingdir = $1;
+my $workingdir = "/home/barney/.conky/conky/losung4conky/data/";
 $csvFilename="$workingdir/losungen$currentYear.csv";
 
 # check for existence of input file

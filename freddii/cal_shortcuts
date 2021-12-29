@@ -37,7 +37,7 @@ gap_y=0,
 minimum_height=200,
 minimum_width=200,
 
-alignment = 'middle_right',
+alignment = 'top_right',
 
 own_window=true,
 own_window_type="normal",
