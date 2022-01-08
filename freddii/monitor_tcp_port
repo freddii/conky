@@ -88,6 +88,10 @@ ${font DejaVu Sans Mono:size=8} ${tcp_portmon 1 49151 rhost 0} ${alignr} ${tcp_p
  ${tcp_portmon 1 49151 rip 3} ${alignr} ${tcp_portmon 1 49151 lservice 3}
  ${tcp_portmon 1 49151 rip 4} ${alignr} ${tcp_portmon 1 49151 lservice 4}
  ${tcp_portmon 1 49151 rip 5} ${alignr} ${tcp_portmon 1 49151 lservice 5}
+ ${tcp_portmon 1 49151 rip 6} ${alignr} ${tcp_portmon 1 49151 lservice 6}
+ ${tcp_portmon 1 49151 rip 7} ${alignr} ${tcp_portmon 1 49151 lservice 7}
+ ${tcp_portmon 1 49151 rip 8} ${alignr} ${tcp_portmon 1 49151 lservice 8}
+ ${tcp_portmon 1 49151 rip 9} ${alignr} ${tcp_portmon 1 49151 lservice 9}
 ${font DejaVu Sans Mono:style=Bold:size=9}${color #009bf9}Outbound Connect: ${color}${tcp_portmon 49152 65535 count} ${alignr}${color #009bf9} Remote Service/Port$color
 ${font DejaVu Sans Mono:size=8} ${tcp_portmon 49151 65535 rhost 0} ${alignr} ${tcp_portmon 49151 65535 rservice 0}
  ${tcp_portmon 49152 65535 rip 1} ${alignr} ${tcp_portmon 49152 65535 rservice 1}
@@ -95,6 +99,10 @@ ${font DejaVu Sans Mono:size=8} ${tcp_portmon 49151 65535 rhost 0} ${alignr} ${t
  ${tcp_portmon 49152 65535 rip 3} ${alignr} ${tcp_portmon 49152 65535 rservice 3}
  ${tcp_portmon 49152 65535 rip 4} ${alignr} ${tcp_portmon 49152 65535 rservice 4}
  ${tcp_portmon 49152 65535 rip 5} ${alignr} ${tcp_portmon 49152 65535 rservice 5}
+ ${tcp_portmon 49152 65535 rip 6} ${alignr} ${tcp_portmon 49152 65535 rservice 6}
+ ${tcp_portmon 49152 65535 rip 7} ${alignr} ${tcp_portmon 49152 65535 rservice 7}
+ ${tcp_portmon 49152 65535 rip 8} ${alignr} ${tcp_portmon 49152 65535 rservice 8}
+ ${tcp_portmon 49152 65535 rip 9} ${alignr} ${tcp_portmon 49152 65535 rservice 9}
 #${color0}${hr}
 ]]
 
