@@ -1,0 +1,121 @@
+--[[
+######################################
+## Credits			    ##
+##				    ##
+##				    ##
+## https://github.com/freddii/conky 
+https://trickslinux.wordpress.com/2013/06/08/listing-network-connections-along-with-associated-application-name-in-conky/##
+######################################
+]]
+
+
+conky.config = {
+
+-------------------------------------
+--  Generic Settings
+-------------------------------------
+background=true,
+update_interval=1,
+double_buffer=true,
+no_buffers=true,
+imlib_cache_size=10,
+text_buffer_size = 1024,
+
+draw_shades=false,
+draw_outline=false,
+draw_borders=false,
+
+use_xft = true,
+total_run_times = 0,
+
+
+-------------------------------------
+--  Window Specifications
+-------------------------------------
+gap_x=7,
+gap_y=80,
+
+minimum_height=200,
+minimum_width=200,
+
+alignment = 'bottom_right',
+
+own_window=true,
+own_window_type="normal",
+own_window_transparent=false,
+own_window_hints="undecorated,below,sticky,skip_taskbar,skip_pager",
+own_window_class = 'Conky',
+own_window_argb_visual=true,
+own_window_argb_value=192,
+double_buffer = true,
+draw_shades = false,
+default_shade_color = '#000000',
+draw_borders = false,
+border_width = 0,
+
+-------------------------------------
+--  Text Settings
+-------------------------------------
+xftalpha=1,
+font="DejaVu Sans Mono:size=11",
+override_utf8_locale=true,
+draw_graph_borders = false,
+draw_outline = false,
+default_outline_color = '#828282',
+no_buffers = true,
+uppercase = false,
+cpu_avg_samples = 4,
+pad_percents = 2,
+-------------------------------------
+--  Color Scheme
+-------------------------------------
+color1="gray50",
+}
+
+
+
+
+conky.text = [[
+##################################
+##     TCP PORT MONITOR         ##
+##################################
+## rip instead of rhost #maybe less requests?
+\
+${font DejaVu Sans Mono:size=12}TCP PORT MONITOR ${hr 2}
+${font DejaVu Sans Mono:style=Bold:size=9}${color #009bf9}Inbound Connect: ${color}${tcp_portmon 1 49151 count}${alignr}${color #009bf9} Local Service/Port$color
+${font DejaVu Sans Mono:size=8} ${tcp_portmon 1 49151 rhost 0} ${alignr} ${tcp_portmon 1 49151 lservice 0}
+ ${tcp_portmon 1 49151 rip 1} ${alignr} ${tcp_portmon 1 49151 lservice 1}
+ ${tcp_portmon 1 49151 rip 2} ${alignr} ${tcp_portmon 1 49151 lservice 2}
+ ${tcp_portmon 1 49151 rip 3} ${alignr} ${tcp_portmon 1 49151 lservice 3}
+ ${tcp_portmon 1 49151 rip 4} ${alignr} ${tcp_portmon 1 49151 lservice 4}
+ ${tcp_portmon 1 49151 rip 5} ${alignr} ${tcp_portmon 1 49151 lservice 5}
+ ${tcp_portmon 1 49151 rip 6} ${alignr} ${tcp_portmon 1 49151 lservice 6}
+ ${tcp_portmon 1 49151 rip 7} ${alignr} ${tcp_portmon 1 49151 lservice 7}
+ ${tcp_portmon 1 49151 rip 8} ${alignr} ${tcp_portmon 1 49151 lservice 8}
+ ${tcp_portmon 1 49151 rip 9} ${alignr} ${tcp_portmon 1 49151 lservice 9}
+${font DejaVu Sans Mono:style=Bold:size=9}${color #009bf9}Outbound Connect: ${color}${tcp_portmon 49152 65535 count} ${alignr}${color #009bf9} Remote Service/Port$color
+${font DejaVu Sans Mono:size=8} ${tcp_portmon 49151 65535 rhost 0} ${alignr} ${tcp_portmon 49151 65535 rservice 0}
+ ${tcp_portmon 49152 65535 rip 1} ${alignr} ${tcp_portmon 49152 65535 rservice 1}
+ ${tcp_portmon 49152 65535 rip 2} ${alignr} ${tcp_portmon 49152 65535 rservice 2}
+ ${tcp_portmon 49152 65535 rip 3} ${alignr} ${tcp_portmon 49152 65535 rservice 3}
+ ${tcp_portmon 49152 65535 rip 4} ${alignr} ${tcp_portmon 49152 65535 rservice 4}
+ ${tcp_portmon 49152 65535 rip 5} ${alignr} ${tcp_portmon 49152 65535 rservice 5}
+ ${tcp_portmon 49152 65535 rip 6} ${alignr} ${tcp_portmon 49152 65535 rservice 6}
+ ${tcp_portmon 49152 65535 rip 7} ${alignr} ${tcp_portmon 49152 65535 rservice 7}
+ ${tcp_portmon 49152 65535 rip 8} ${alignr} ${tcp_portmon 49152 65535 rservice 8}
+ ${tcp_portmon 49152 65535 rip 9} ${alignr} ${tcp_portmon 49152 65535 rservice 9}
+#${color0}${hr}
+${color Tan2}ESTABLISHED Connections${color DarkSlateGray}${hr 2}
+
+${offset 10}${color lightgrey}Inbound: ${color white}${tcp_portmon 1 32767 count}    ${color lightgrey}Outbound: ${color white}${tcp_portmon 32768 61000 count}${alignr}${color lightgrey}Total: ${color white}${tcp_portmon 1 65535 count}
+
+${color slate grey}Process                 ${color slate grey}Remote Host                     ${color slate grey}L-Port ${alignr}${color slate grey}R-Port${color lightgrey}
+
+#${font Ubuntu Mono:size=8}${texeci 30 netstat -ap | grep 'ESTABLISHED' | sed -r 's|.*[0-9.]+:([0-9]*)\s*([^:]+):([a-zA-Z]+)[^/]+/([a-zA-Z0-9]*)|\4 \2 \1 \3|' | awk '{printf("%-14s %-20s %5s %7s\n",$1,$2,$3,$4)}'}
+${font Ubuntu Mono:size=8}${texeci 30 netstat -autwp | grep 'VERBUNDEN' | sed -r 's|.*[0-9.]+:([0-9]*)\s*([^:]+):([a-zA-Z]+)[^/]+/([a-zA-Z0-9]*)|\4 \2 \1 \3|' | awk '{printf("%-14s %-20s %5s %7s\n",$1,$2,$3,$4)}'}
+]]
+
+
+
+
+
