@@ -70,7 +70,7 @@ color1="gray50",
 --template0 = 'URL',
 --template1 =[["URL"]],
 --${templatex}
-template1 =[["https://www.yr.no/place/Germany/North_Rhine-Westphalia/Paderborn/avansert_meteogram.png"]],
+template1 =[["https://www.yr.no/en/content/2-2855745/meteogram.svg"]],
 
 }
 
@@ -79,7 +79,7 @@ template1 =[["https://www.yr.no/place/Germany/North_Rhine-Westphalia/Paderborn/a
 
 conky.text = [[
 ${font}METEOGRAM${hr 2}
-${execi 3600 curl -o /tmp/meteo.png ${template1}}
+${execi 3600 curl -o /tmp/meteo.svg ${template1} && convert /tmp/meteo.svg /tmp/meteo.png }
 ${image /tmp/meteo.png -p 0,20 -s 640x240}
 ]]
 
