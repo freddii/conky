@@ -1,0 +1,116 @@
+--[[
+######################################
+## Credits
+##
+##
+## https://github.com/freddii/conky
+######################################
+]]
+
+
+conky.config = {
+
+-------------------------------------
+--  Generic Settings
+-------------------------------------
+background=true,
+update_interval=60,
+double_buffer=true,
+no_buffers=true,
+imlib_cache_size=10,
+text_buffer_size = 1024,
+
+draw_shades=false,
+draw_outline=false,
+draw_borders=false,
+
+use_xft = true,
+total_run_times = 0,
+
+
+-------------------------------------
+--  Window Specifications
+-------------------------------------
+gap_x=8,
+gap_y=0,
+
+minimum_height=200,
+minimum_width=100,
+maximum_width=300,
+
+alignment = 'top_right',
+
+own_window=true,
+own_window_type="normal",
+own_window_transparent=false,
+own_window_hints="undecorated,below,sticky,skip_taskbar,skip_pager",
+own_window_class = 'Conky',
+own_window_argb_visual=true,
+own_window_argb_value=192,
+double_buffer = true,
+draw_shades = false,
+default_shade_color = '#000000',
+draw_borders = false,
+border_width = 0,
+
+-------------------------------------
+--  Text Settings
+-------------------------------------
+xftalpha=1,
+font="DejaVu Sans Mono:size=11",
+override_utf8_locale=true,
+draw_graph_borders = false,
+draw_outline = false,
+default_outline_color = '#828282',
+no_buffers = true,
+uppercase = false,
+cpu_avg_samples = 4,
+pad_percents = 2,
+-------------------------------------
+--  Color Scheme
+-------------------------------------
+color1="gray50",
+
+}
+
+--date --set="23 June 2018 10:00:00"
+
+
+conky.text = [[
+\
+######################################
+## calendar
+######################################
+${font DejaVu Sans Mono:size=12}${time %^B %Y} ${hr 2}
+\
+${font}${goto 28}${color}MO DI MI DO FR SA SO${if_existing /usr/bin/ncal}
+${goto 28}${color1}${execpi 1800 LAR=`date +%-d`; ncal -bh | sed '2d' | sed -e '1d' -e 's/\<'$LAR'\>/${color #009bf9}&${color1}/' | sed ':a;N;$!ba;s/\n/\n${goto 28}/g'}${color}${font}${endif}
+#${font}
+#\
+######################################
+## shortcuts
+######################################
+${font DejaVu Sans Mono:size=12}SHORTCUT KEYS ${hr}${font}
+${color0}Super+T$alignr${color1} Terminal
+${color0}Ctrl+Esc$alignr${color1} Open Whisker
+${color0}Super+F$alignr${color1} File Manager
+${color0}Alt+F4$alignr${color1} Close Window
+${color0}Super+W$alignr${color1} Web Browser
+${color0}Super+E$alignr${color1} Editor
+${color0}Ctrl+Alt+Del$alignr${color1} lock screen
+${color0}Ctrl+Alt+Esc$alignr${color1} xkill
+${color0}Ctrl+Alt+D$alignr${color1} hide window
+${color0}PrtSc$alignr${color1} Screenshot
+#${color0}${hr}
+#####################################
+##  TODO LIST
+#####################################
+\
+${if_existing /home/barney/Desktop/TODO.txt} ${color0}${font DejaVu Sans Mono:size=12}TODO LIST${font Liberation Mono:size=12:style=Bold}${color #009bf9} ${exec echo $(($(wc -l ~/Desktop/TODO.txt | cut -d' ' -f1)+1))} ${font}$color${hr 2}
+${font DejaVu Sans Mono:size=9}${color1}${exec cat ~/Desktop/TODO.txt |nl -w2 -s': '}$endif
+]]
+
+
+
+
+
